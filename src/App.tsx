@@ -34,10 +34,27 @@ function App() {
   };
 
   return (
-    <div className="bg-blue-200 min-h-screen flex items-center justify-center">
-      <div className="bg-gray-800 p-6 rounded-lg shadow-md w-full max-w-lg">
+    <div className="bg-blue-200 min-h-screen flex items-center justify-center relative">
+
+    {/* SVG Background */}
+    <div className='absolute inset-0 z-0'>
+      <svg 
+          viewBox="0 0 200 200"
+          xmlns="http://www.w3.org/2000/svg"
+          className='w-full h-full object-cover'
+      >
+        <path 
+          fill="#FF0066"
+          d="M47.6,-53.2C63.3,-43.6,78.6,-30.1,84.7,-12.5C90.7,5.2,87.4,26.9,75.6,40.2C63.8,53.6,43.5,58.6,24.6,63.8C5.8,69,-11.6,74.3,-24.6,69C-37.5,63.6,-46,47.5,-53.1,32.2C-60.1,16.8,-65.7,2.1,-63.1,-10.8C-60.4,-23.7,-49.5,-34.8,-37.6,-45.1C-25.7,-55.4,-12.9,-64.9,1.6,-66.8C16,-68.6,32,-62.9,47.6,-53.2Z"
+          transform="translate(100 100)"
+        />
+      </svg>
+    </div>
+
+    {/* Main Content */}
+      <div className="bg-gray-800 p-6 rounded-lg shadow-md w-full max-w-lg z-10">
         <h2 className="text-white text-xl font-bold mb-4 text-center">Chores To Do List</h2>
-        
+
         <ul>
           {chores.map((chore, index) => (
             <li key={index} className="flex justify-between items-center bg-gray-700 text-white p-2 mb-2 rounded-md">
